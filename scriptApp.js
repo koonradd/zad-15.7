@@ -52,14 +52,8 @@ class Stopwatch extends React.Component {
     });
   }
 
-  format(minuts, seconds, miliseconds) {
-    return (
-      this.pad0(minuts) +
-      ":" +
-      this.pad0(seconds) +
-      ":" +
-      this.pad0(miliseconds)
-    );
+  format(times) {
+    return `${pad0(times.minutes)}:${pad0(times.seconds)}:${pad0(Math.floor(times.miliseconds))}`;
   }
 
   pad0(value) {
